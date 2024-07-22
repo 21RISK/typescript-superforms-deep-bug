@@ -1,7 +1,7 @@
 
 
 
-<script lang="ts">
+<script lang="ts" >
 
     import type { FormFieldProxy, FormPathLeaves, SuperForm } from 'sveltekit-superforms';
 

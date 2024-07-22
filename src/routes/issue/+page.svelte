@@ -18,4 +18,4 @@
 
 <form method="POST">
     <CmptWithGeneric form={client} name="email" />
-  </form>
+</form>

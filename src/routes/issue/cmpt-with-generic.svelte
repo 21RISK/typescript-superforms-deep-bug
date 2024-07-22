@@ -1,5 +1,9 @@
 
-<script lang="ts" generics="T extends Record<string, unknown>">
+<script lang="ts" context="module">
+    type T = Record<string, unknown>;
+  </script>
+
+<script lang="ts">
 	import { formFieldProxy, type FormPathLeaves, type SuperForm } from "sveltekit-superforms";
 	import CmptWithGenericShared from "./cmpt-with-generic-shared.svelte";
 
