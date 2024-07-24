@@ -30,3 +30,14 @@ RUN echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> /etc/bash.bashrc
 # Change permissions for npm global directory
 RUN chown -R vscode:vscode $NVM_DIR
 #######################################################################
+
+##########################################################################
+# Git things: Mark git as safe workspace (and more)
+##########################################################################
+RUN git config --global --add safe.directory /workspace
+# Install git and bash-completion
+RUN apt-get update && \
+    apt-get install -y git bash-completion
+# Add the bash completion script to the shell initialization
+RUN echo "source /usr/share/bash-completion/completions/git" >> /home/vscode/.bashrc
+##########################################################################
