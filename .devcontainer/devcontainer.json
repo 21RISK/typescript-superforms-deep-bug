@@ -6,6 +6,23 @@
     "workspaceFolder": "/workspace",
     "init": true,
     "forwardPorts": [5173, 27017],
+    "customizations": {
+        "codespaces": {
+            "openFiles": ["README.md"]
+        },
+        "vscode": {
+            "extensions": [
+                "vscode-icons-team.vscode-icons",
+                "esbenp.prettier-vscode",
+                "bradlc.vscode-tailwindcss",
+                "svelte.svelte-vscode",
+                "dbaeumer.vscode-eslint"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+        }
+    },
     // Use 'postCreateCommand' to run commands after the container is created.
     "postCreateCommand": ".devcontainer/post-create-command.sh",
     "portsAttributes": {
