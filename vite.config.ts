@@ -5,5 +5,14 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
+	},
+	server: {
+		host: '0.0.0.0',
+		hmr: {
+			...(process.env.CODESPACE_NAME && {
+                clientPort: 443,
+                // host: `${process.env.CODESPACE_NAME}-3000.githubpreview.dev`,
+            }),
+		}
 	}
 });

@@ -1,0 +1,20 @@
+
+{
+    "name": "debug-type-issue",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "init": true,
+    "forwardPorts": [5173, 27017],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": ".devcontainer/post-create-command.sh",
+    "portsAttributes": {
+        "5173": {
+            "label": "sveltekit",
+            "onAutoForward": "notify",
+            "protocol": "http"
+        }
+    },
+    // Added based on https://github.com/csci430-os/vscode-remote-devcontainer/issues/2
+    "mounts": ["source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"]
+}
