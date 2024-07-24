@@ -1,3 +1,4 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.minimap.enabled": false,
+    "typescript.tsdk": "./node_modules/typescript/lib"
 }
