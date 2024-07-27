@@ -1,21 +1,20 @@
 <script lang="ts">
-	import { superForm } from "sveltekit-superforms";
-	import type { PageData } from "./$types";
+	import { superForm } from 'sveltekit-superforms';
+	import type { PageData } from './$types';
 
+	import CmptWithGeneric from './cmpt-with-generic.svelte';
 
-    import CmptWithGeneric from "./cmpt-with-generic.svelte";
+	export let data: PageData;
 
-    export let data: PageData;
+	// Client API:
+	const client = superForm(data.form);
+	const form = client.form;
 
-      // Client API:
-    const client = superForm(data.form);
-    const form = client.form;
-    
+	console.log(form);
 </script>
-
 
 <h1>Let's reproduce an issue here</h1>
 
 <form method="POST">
-    <CmptWithGeneric form={client} name="email" />
+	<CmptWithGeneric form={client} name="email" />
 </form>
